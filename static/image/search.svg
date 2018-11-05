@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-header-search</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="et-header-default" transform="translate(-1074.000000, -95.000000)" fill="#4A4A4A">
+            <g id="HEADER" transform="translate(180.000000, 83.000000)">
+                <g id="icon-header-search" transform="translate(894.000000, 12.000000)">
+                    <path d="M36,32.469 L26.6178336,23.1615 C28.3823764,20.754 29.4256794,17.793 29.4256794,14.595 C29.4256794,6.5475 22.8256542,0 14.7120837,0 C6.6000252,0 0,6.5475 0,14.595 C0,22.644 6.6000252,29.19 14.7120837,29.19 C17.7875593,29.19 20.6437902,28.2495 23.0086102,26.643 L32.4406737,36 L36,32.469 L36,32.469 Z M4.31534294,14.595 C4.31534294,8.907 8.97996556,4.2795 14.7135957,4.2795 C20.4472258,4.2795 25.1118485,8.907 25.1118485,14.595 C25.1118485,20.283 20.4472258,24.9105 14.7135957,24.9105 C8.97845353,24.9105 4.31534294,20.283 4.31534294,14.595 L4.31534294,14.595 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
