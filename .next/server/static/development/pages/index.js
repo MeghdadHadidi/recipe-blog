@@ -93,6 +93,76 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "./actions/menus.js":
+/*!**************************!*\
+  !*** ./actions/menus.js ***!
+  \**************************/
+/*! exports provided: getMenuItems */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getMenuItems", function() { return getMenuItems; });
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./types */ "./actions/types.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+
+
+var instance = axios__WEBPACK_IMPORTED_MODULE_1___default.a.create({
+  baseURL: "http://www.mocky.io/v2",
+  headers: {
+    'Content-Type': 'application/json;charset=UTF-8'
+  }
+});
+var getMenuItems = function getMenuItems() {
+  return function (dispatch) {
+    dispatch({
+      type: _types__WEBPACK_IMPORTED_MODULE_0__["GET_MENU_ITEMS_START"]
+    });
+    return instance.get('/5be16d2d3000008100d9a971').then(function (_ref) {
+      var data = _ref.data;
+      dispatch({
+        type: _types__WEBPACK_IMPORTED_MODULE_0__["GET_MENU_ITEMS_END"]
+      });
+
+      if (data.success) {
+        dispatch({
+          type: _types__WEBPACK_IMPORTED_MODULE_0__["SET_MENU_ITEMS"],
+          payload: data.data
+        });
+      } else {
+        dispatch({
+          type: _types__WEBPACK_IMPORTED_MODULE_0__["GET_MENU_ITEMS_ERROR"],
+          payload: data.error
+        });
+      }
+    });
+  };
+};
+
+/***/ }),
+
+/***/ "./actions/types.js":
+/*!**************************!*\
+  !*** ./actions/types.js ***!
+  \**************************/
+/*! exports provided: GET_MENU_ITEMS_START, GET_MENU_ITEMS_END, GET_MENU_ITEMS_ERROR, SET_MENU_ITEMS */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_MENU_ITEMS_START", function() { return GET_MENU_ITEMS_START; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_MENU_ITEMS_END", function() { return GET_MENU_ITEMS_END; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_MENU_ITEMS_ERROR", function() { return GET_MENU_ITEMS_ERROR; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_MENU_ITEMS", function() { return SET_MENU_ITEMS; });
+// Menu Items
+var GET_MENU_ITEMS_START = 'GET_MENU_ITEMS_START';
+var GET_MENU_ITEMS_END = 'GET_MENU_ITEMS_END';
+var GET_MENU_ITEMS_ERROR = 'GET_MENU_ITEMS_ERROR';
+var SET_MENU_ITEMS = 'SET_MENU_ITEMS';
+
+/***/ }),
+
 /***/ "./components/header.js":
 /*!******************************!*\
   !*** ./components/header.js ***!
@@ -108,7 +178,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactstrap */ "reactstrap");
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _submenu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./submenu */ "./components/submenu.js");
-var _jsxFileName = "D:\\project\\nextjs\\project-recipe\\components\\header.js";
+var _jsxFileName = "F:\\Hadidi\\Projects\\recipe-blog\\components\\header.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -258,6 +328,7 @@ function (_React$Component) {
         },
         __self: this
       }, " \u0639\u0646\u0648\u0627\u0646 \u0645\u0646\u0648\u06CC \u0627\u0648\u0644 "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_submenu__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        menuItemId: 1,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 48
@@ -353,7 +424,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactstrap */ "reactstrap");
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./header */ "./components/header.js");
-var _jsxFileName = "D:\\project\\nextjs\\project-recipe\\components\\layout.js";
+var _jsxFileName = "F:\\Hadidi\\Projects\\recipe-blog\\components\\layout.js";
 
 
 
@@ -403,414 +474,481 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactstrap */ "reactstrap");
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "D:\\project\\nextjs\\project-recipe\\components\\submenu.js";
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _actions_menus__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../actions/menus */ "./actions/menus.js");
+var _jsxFileName = "F:\\Hadidi\\Projects\\recipe-blog\\components\\submenu.js";
+
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 
 
-var SubMenu = function SubMenu() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], {
-    className: "right-dir",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 4
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-    className: "sub-menu",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 5
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "first expanded",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 6
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    title: "submenu1",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 7
-    },
-    __self: this
-  }, " \u0632\u06CC\u0631\u0645\u0646\u0648\u06CC \u0627\u0648\u0644"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-    className: "main-menu--sub-list",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 8
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "first leaf",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 9
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    title: "submenu1",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 10
-    },
-    __self: this
-  }, " \u0627\u0648\u0644 ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "leaf",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    title: "submenu1",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13
-    },
-    __self: this
-  }, " \u062F\u0648\u0645 ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "leaf",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 15
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    title: "submenu1",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 16
-    },
-    __self: this
-  }, " \u0633\u0648\u0645 ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "last leaf",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 18
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    title: "submenu1",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 19
-    },
-    __self: this
-  }, " \u0686\u0647\u0627\u0631\u0645 ")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "first expanded",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 23
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    title: "submenu1",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 24
-    },
-    __self: this
-  }, " \u0632\u06CC\u0631\u0645\u0646\u0648\u06CC \u0627\u0648\u0644"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-    className: "main-menu--sub-list",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 25
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "first leaf",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 26
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    title: "submenu1",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 27
-    },
-    __self: this
-  }, " \u0627\u0648\u0644 ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "leaf",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 29
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    title: "submenu1",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 30
-    },
-    __self: this
-  }, " \u062F\u0648\u0645 ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "leaf",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 32
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    title: "submenu1",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 33
-    },
-    __self: this
-  }, " \u0633\u0648\u0645 ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "last leaf",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 35
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    title: "submenu1",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 36
-    },
-    __self: this
-  }, " \u0686\u0647\u0627\u0631\u0645 ")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "first expanded",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 40
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    title: "submenu1",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 41
-    },
-    __self: this
-  }, " \u0632\u06CC\u0631\u0645\u0646\u0648\u06CC \u0627\u0648\u0644"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-    className: "main-menu--sub-list",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 42
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "first leaf",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 43
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    title: "submenu1",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 44
-    },
-    __self: this
-  }, " \u0627\u0648\u0644 ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "leaf",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 46
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    title: "submenu1",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 47
-    },
-    __self: this
-  }, " \u062F\u0648\u0645 ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "leaf",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 49
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    title: "submenu1",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 50
-    },
-    __self: this
-  }, " \u0633\u0648\u0645 ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "last leaf",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 52
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    title: "submenu1",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 53
-    },
-    __self: this
-  }, " \u0686\u0647\u0627\u0631\u0645 ")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "first expanded",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 57
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    title: "submenu1",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 58
-    },
-    __self: this
-  }, " \u0632\u06CC\u0631\u0645\u0646\u0648\u06CC \u0627\u0648\u0644"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-    className: "main-menu--sub-list",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 59
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "first leaf",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 60
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    title: "submenu1",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 61
-    },
-    __self: this
-  }, " \u0627\u0648\u0644 ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "leaf",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 63
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    title: "submenu1",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 64
-    },
-    __self: this
-  }, " \u062F\u0648\u0645 ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "leaf",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 66
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    title: "submenu1",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 67
-    },
-    __self: this
-  }, " \u0633\u0648\u0645 ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "last leaf",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 69
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    title: "submenu1",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 70
-    },
-    __self: this
-  }, " \u0686\u0647\u0627\u0631\u0645 ")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "first expanded",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 74
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    title: "submenu1",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 75
-    },
-    __self: this
-  }, " \u0632\u06CC\u0631\u0645\u0646\u0648\u06CC \u0627\u0648\u0644"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-    className: "main-menu--sub-list",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 76
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "first leaf",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 77
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    title: "submenu1",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 78
-    },
-    __self: this
-  }, " \u0627\u0648\u0644 ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "leaf",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 80
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    title: "submenu1",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 81
-    },
-    __self: this
-  }, " \u062F\u0648\u0645 ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "leaf",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 83
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    title: "submenu1",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 84
-    },
-    __self: this
-  }, " \u0633\u0648\u0645 ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "last leaf",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 86
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    title: "submenu1",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 87
-    },
-    __self: this
-  }, " \u0686\u0647\u0627\u0631\u0645 "))))));
+ // Actions
+
+
+
+var SubMenu =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(SubMenu, _React$Component);
+
+  function SubMenu() {
+    _classCallCheck(this, SubMenu);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(SubMenu).apply(this, arguments));
+  }
+
+  _createClass(SubMenu, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.getMenuItems().then(function (data) {
+        console.log(data);
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], {
+        className: "right-dir",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 17
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "sub-menu",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 18
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "first expanded",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 19
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        title: "submenu1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 20
+        },
+        __self: this
+      }, " \u0632\u06CC\u0631\u0645\u0646\u0648\u06CC \u0627\u0648\u0644"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "main-menu--sub-list",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 21
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "first leaf",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 22
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        title: "submenu1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 23
+        },
+        __self: this
+      }, " \u0627\u0648\u0644 ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "leaf",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 25
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        title: "submenu1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 26
+        },
+        __self: this
+      }, " \u062F\u0648\u0645 ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "leaf",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 28
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        title: "submenu1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 29
+        },
+        __self: this
+      }, " \u0633\u0648\u0645 ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "last leaf",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 31
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        title: "submenu1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 32
+        },
+        __self: this
+      }, " \u0686\u0647\u0627\u0631\u0645 ")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "first expanded",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 36
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        title: "submenu1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 37
+        },
+        __self: this
+      }, " \u0632\u06CC\u0631\u0645\u0646\u0648\u06CC \u0627\u0648\u0644"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "main-menu--sub-list",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 38
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "first leaf",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 39
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        title: "submenu1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 40
+        },
+        __self: this
+      }, " \u0627\u0648\u0644 ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "leaf",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 42
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        title: "submenu1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 43
+        },
+        __self: this
+      }, " \u062F\u0648\u0645 ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "leaf",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 45
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        title: "submenu1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 46
+        },
+        __self: this
+      }, " \u0633\u0648\u0645 ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "last leaf",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 48
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        title: "submenu1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 49
+        },
+        __self: this
+      }, " \u0686\u0647\u0627\u0631\u0645 ")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "first expanded",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 53
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        title: "submenu1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 54
+        },
+        __self: this
+      }, " \u0632\u06CC\u0631\u0645\u0646\u0648\u06CC \u0627\u0648\u0644"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "main-menu--sub-list",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 55
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "first leaf",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 56
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        title: "submenu1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 57
+        },
+        __self: this
+      }, " \u0627\u0648\u0644 ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "leaf",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 59
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        title: "submenu1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 60
+        },
+        __self: this
+      }, " \u062F\u0648\u0645 ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "leaf",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 62
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        title: "submenu1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 63
+        },
+        __self: this
+      }, " \u0633\u0648\u0645 ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "last leaf",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 65
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        title: "submenu1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 66
+        },
+        __self: this
+      }, " \u0686\u0647\u0627\u0631\u0645 ")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "first expanded",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 70
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        title: "submenu1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 71
+        },
+        __self: this
+      }, " \u0632\u06CC\u0631\u0645\u0646\u0648\u06CC \u0627\u0648\u0644"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "main-menu--sub-list",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 72
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "first leaf",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 73
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        title: "submenu1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 74
+        },
+        __self: this
+      }, " \u0627\u0648\u0644 ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "leaf",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 76
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        title: "submenu1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 77
+        },
+        __self: this
+      }, " \u062F\u0648\u0645 ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "leaf",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 79
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        title: "submenu1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 80
+        },
+        __self: this
+      }, " \u0633\u0648\u0645 ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "last leaf",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 82
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        title: "submenu1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 83
+        },
+        __self: this
+      }, " \u0686\u0647\u0627\u0631\u0645 ")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "first expanded",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 87
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        title: "submenu1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 88
+        },
+        __self: this
+      }, " \u0632\u06CC\u0631\u0645\u0646\u0648\u06CC \u0627\u0648\u0644"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "main-menu--sub-list",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 89
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "first leaf",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 90
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        title: "submenu1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 91
+        },
+        __self: this
+      }, " \u0627\u0648\u0644 ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "leaf",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 93
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        title: "submenu1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 94
+        },
+        __self: this
+      }, " \u062F\u0648\u0645 ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "leaf",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 96
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        title: "submenu1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 97
+        },
+        __self: this
+      }, " \u0633\u0648\u0645 ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "last leaf",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 99
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        title: "submenu1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 100
+        },
+        __self: this
+      }, " \u0686\u0647\u0627\u0631\u0645 "))))));
+    }
+  }]);
+
+  return SubMenu;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+SubMenu.propTypes = {
+  getMenuItems: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func.isRequired
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (SubMenu);
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    fetching: state.menus.fetching,
+    fetched: state.menus.fetched,
+    menuItems: state.menus.items,
+    error: state.menus.error
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["connect"])(mapStateToProps, {
+  getMenuItems: _actions_menus__WEBPACK_IMPORTED_MODULE_4__["getMenuItems"]
+})(SubMenu));
 
 /***/ }),
 
@@ -847,7 +985,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _static_css_style_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_static_css_style_css__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _static_css_sty_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../static/css/sty.scss */ "./static/css/sty.scss");
 /* harmony import */ var _static_css_sty_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_static_css_sty_scss__WEBPACK_IMPORTED_MODULE_6__);
-var _jsxFileName = "D:\\project\\nextjs\\project-recipe\\pages\\index.js";
+var _jsxFileName = "F:\\Hadidi\\Projects\\recipe-blog\\pages\\index.js";
 
 
 
@@ -927,6 +1065,17 @@ module.exports = __webpack_require__(/*! ./pages/index.js */"./pages/index.js");
 
 /***/ }),
 
+/***/ "axios":
+/*!************************!*\
+  !*** external "axios" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("axios");
+
+/***/ }),
+
 /***/ "next/head":
 /*!****************************!*\
   !*** external "next/head" ***!
@@ -938,6 +1087,17 @@ module.exports = require("next/head");
 
 /***/ }),
 
+/***/ "prop-types":
+/*!*****************************!*\
+  !*** external "prop-types" ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("prop-types");
+
+/***/ }),
+
 /***/ "react":
 /*!************************!*\
   !*** external "react" ***!
@@ -946,6 +1106,17 @@ module.exports = require("next/head");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "react-redux":
+/*!******************************!*\
+  !*** external "react-redux" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-redux");
 
 /***/ }),
 

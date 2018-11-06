@@ -1,5 +1,26 @@
 ((window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\_app.js"],{
 
+/***/ "./actions/types.js":
+/*!**************************!*\
+  !*** ./actions/types.js ***!
+  \**************************/
+/*! exports provided: GET_MENU_ITEMS_START, GET_MENU_ITEMS_END, GET_MENU_ITEMS_ERROR, SET_MENU_ITEMS */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_MENU_ITEMS_START", function() { return GET_MENU_ITEMS_START; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_MENU_ITEMS_END", function() { return GET_MENU_ITEMS_END; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_MENU_ITEMS_ERROR", function() { return GET_MENU_ITEMS_ERROR; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_MENU_ITEMS", function() { return SET_MENU_ITEMS; });
+// Menu Items
+var GET_MENU_ITEMS_START = 'GET_MENU_ITEMS_START';
+var GET_MENU_ITEMS_END = 'GET_MENU_ITEMS_END';
+var GET_MENU_ITEMS_ERROR = 'GET_MENU_ITEMS_ERROR';
+var SET_MENU_ITEMS = 'SET_MENU_ITEMS';
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js":
 /*!***********************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js ***!
@@ -11799,7 +11820,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_redux_wrapper__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_redux_wrapper__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../store */ "./store.js");
 
-var _jsxFileName = "D:\\project\\nextjs\\project-recipe\\pages\\_app.js";
+var _jsxFileName = "F:\\Hadidi\\Projects\\recipe-blog\\pages\\_app.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -11952,28 +11973,68 @@ function (_App) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
-/* harmony import */ var _news__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./news */ "./reducers/news.js");
+/* harmony import */ var _menus__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./menus */ "./reducers/menus.js");
 
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
-  news: _news__WEBPACK_IMPORTED_MODULE_1__["news"]
+  menus: _menus__WEBPACK_IMPORTED_MODULE_1__["default"]
 }));
 
 /***/ }),
 
-/***/ "./reducers/news.js":
-/*!**************************!*\
-  !*** ./reducers/news.js ***!
-  \**************************/
-/*! exports provided: news */
+/***/ "./reducers/menus.js":
+/*!***************************!*\
+  !*** ./reducers/menus.js ***!
+  \***************************/
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "news", function() { return news; });
-function news() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return menus; });
+/* harmony import */ var _actions_types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/types */ "./actions/types.js");
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+var initialState = {
+  fetching: false,
+  fetched: false,
+  items: [],
+  error: ''
+};
+function menus() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
   var action = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+  switch (action.type) {
+    case _actions_types__WEBPACK_IMPORTED_MODULE_0__["GET_MENU_ITEMS_START"]:
+      return _objectSpread({}, state, {
+        fetching: true
+      });
+
+    case _actions_types__WEBPACK_IMPORTED_MODULE_0__["GET_MENU_ITEMS_END"]:
+      return _objectSpread({}, state, {
+        fetching: false
+      });
+
+    case _actions_types__WEBPACK_IMPORTED_MODULE_0__["GET_MENU_ITEMS_ERROR"]:
+      return _objectSpread({}, state, {
+        fetched: false,
+        error: action.payload
+      });
+
+    case _actions_types__WEBPACK_IMPORTED_MODULE_0__["SET_MENU_ITEMS"]:
+      return _objectSpread({}, state, {
+        fetched: true,
+        items: action.payload
+      });
+
+    default:
+      return state;
+  }
+
   return state;
 }
 
@@ -11995,8 +12056,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var configureStore = function configureStore() {
-  Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_reducers__WEBPACK_IMPORTED_MODULE_2__["default"], [], Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_1__["default"]));
+var configureStore = function configureStore(initialState, options) {
+  return Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_reducers__WEBPACK_IMPORTED_MODULE_2__["default"], initialState, Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_1__["default"]));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (configureStore);

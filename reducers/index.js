@@ -1,6 +1,4 @@
 import { combineReducers } from 'redux'
-import { news } from './news'
+import menus from './menus'
 
-export default combineReducers({
-    news
-})
+export default combineReducers({ menus })

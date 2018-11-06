@@ -45,7 +45,7 @@ export default class Header extends React.Component {
                     <Nav className="header-nav" navbar >
                         <NavItem>
                             <NavLink href="/components/"> عنوان منوی اول </NavLink>
-                            <SubMenu/>
+                            <SubMenu menuItemId={1} />
                         </NavItem>
                         <NavItem>
                             <NavLink href="/components/"> عنوان منوی دوم </NavLink>
