@@ -18,31 +18,29 @@ __webpack_require__.r(__webpack_exports__);
 var instance = axios__WEBPACK_IMPORTED_MODULE_1___default.a.create({
   baseURL: "http://www.mocky.io/v2",
   headers: {
-    'Content-Type': 'application/json;charset=UTF-8'
-  },
-  responseType: 'json'
+    "Content-Type": "application/json;charset=UTF-8"
+  }
 });
 var getMenuItems = function getMenuItems() {
   return function (dispatch) {
     dispatch({
       type: _types__WEBPACK_IMPORTED_MODULE_0__["GET_MENU_ITEMS_START"]
     });
-    return instance.get('/5be165693000002a00d9a947').then(function (_ref) {
-      var data = _ref.data,
-          success = _ref.success;
+    return instance.get("/5be16d2d3000008100d9a971").then(function (_ref) {
+      var data = _ref.data;
       dispatch({
         type: _types__WEBPACK_IMPORTED_MODULE_0__["GET_MENU_ITEMS_END"]
       });
 
-      if (success) {
+      if (data.success) {
         dispatch({
           type: _types__WEBPACK_IMPORTED_MODULE_0__["SET_MENU_ITEMS"],
-          payload: data
+          payload: data.data
         });
       } else {
         dispatch({
           type: _types__WEBPACK_IMPORTED_MODULE_0__["GET_MENU_ITEMS_ERROR"],
-          payload: error
+          payload: data.error
         });
       }
     });
@@ -52,4 +50,4 @@ var getMenuItems = function getMenuItems() {
 /***/ })
 
 })
-//# sourceMappingURL=index.js.ba72b881d07c84aad674.hot-update.js.map
+//# sourceMappingURL=index.js.553d4983eb5767746d88.hot-update.js.map
