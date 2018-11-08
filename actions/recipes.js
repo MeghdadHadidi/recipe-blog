@@ -9,7 +9,7 @@ import { GET_RECIPES } from "./types"
 
 import { getRecipeItemsService } from "./serviceCaller"
 
-export function getRecipeItems(params) {
+export const getRecipeItems = params => {
     return dispatch => {
         dispatch({
             type: generateStartTypeName(GET_RECIPES)

@@ -4,6 +4,7 @@ import { Container, Row, Col } from "reactstrap"
 import Header from "./header"
 import MainItemsBlock from "./DynamicParts/MainItemsBlock"
 import PopularRecipeList from "./DynamicParts/PopularRecipeList"
+import VideoList from "./DynamicParts/VideoSlider"
 
 const Layout = () => (
     <Container>
@@ -22,6 +23,7 @@ const Layout = () => (
             </Col>
             <Col md={9}>
                 <MainItemsBlock />
+                <VideoList />
             </Col>
         </Row>
     </Container>

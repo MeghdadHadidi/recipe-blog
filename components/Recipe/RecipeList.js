@@ -40,7 +40,8 @@ RecipeList.propTypes = {
     items: PropTypes.arrayOf(PropTypes.object).isRequired,
     count: PropTypes.number,
     loading: PropTypes.bool.isRequired,
-    error: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
+    error: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+    getRecipeItems: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
