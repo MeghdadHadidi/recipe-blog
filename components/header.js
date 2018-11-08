@@ -6,11 +6,7 @@ import {
     NavbarBrand,
     Nav,
     NavItem,
-    NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem
+    NavLink
 } from "reactstrap"
 import SubMenu from "./submenu"
 
@@ -34,7 +30,6 @@ export default class Header extends React.Component {
                 <Navbar light expand="md" className="navbar-wrapper">
                     <NavbarToggler onClick={this.toggle} />
                     <NavbarBrand href="/" className="ml-auto m-r-0">
-                        {" "}
                         <img src="../static/image/logo.png" alt="my image" />
                     </NavbarBrand>
                     <Collapse isOpen={this.state.isOpen} navbar>
@@ -55,40 +50,39 @@ export default class Header extends React.Component {
                         <Nav className="header-nav" navbar>
                             <NavItem>
                                 <NavLink href="/components/">
-                                    {" "}
-                                    عنوان منوی اول{" "}
+                                    عنوان منوی اول
                                 </NavLink>
                                 <SubMenu menuItemId={1} />
                             </NavItem>
                             <NavItem>
                                 <NavLink href="/components/">
-                                    {" "}
-                                    عنوان منوی دوم{" "}
+                                    عنوان منوی دوم
                                 </NavLink>
+                                <SubMenu menuItemId={2} />
                             </NavItem>
                             <NavItem>
                                 <NavLink href="/components/">
-                                    {" "}
-                                    عنوان منوی سوم{" "}
+                                    عنوان منوی سوم
                                 </NavLink>
+                                <SubMenu menuItemId={3} />
                             </NavItem>
                             <NavItem>
                                 <NavLink href="/components/">
-                                    {" "}
-                                    عنوان منوی چهارم{" "}
+                                    عنوان منوی چهارم
                                 </NavLink>
+                                <SubMenu menuItemId={4} />
                             </NavItem>
                             <NavItem>
                                 <NavLink href="/components/">
-                                    {" "}
-                                    عنوان منوی پنجم{" "}
+                                    عنوان منوی پنجم
                                 </NavLink>
+                                <SubMenu menuItemId={5} />
                             </NavItem>
                             <NavItem>
                                 <NavLink href="/components/">
-                                    {" "}
-                                    عنوان منوی ششم{" "}
+                                    عنوان منوی ششم
                                 </NavLink>
+                                <SubMenu menuItemId={6} />
                             </NavItem>
                         </Nav>
                     </Collapse>

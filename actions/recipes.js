@@ -5,29 +5,29 @@ import {
     generateSuccessTypeName
 } from "../utils/asyncActionNameGenerator"
 
-import { GET_MENU_ITEMS } from "./types"
+import { GET_RECIPES } from "./types"
 
-import { getMenuItemsService } from "./serviceCaller"
+import { getRecipeItemsService } from "./serviceCaller"
 
-export const getMenuItems = () => {
+export function getRecipeItems(params) {
     return dispatch => {
         dispatch({
-            type: generateStartTypeName(GET_MENU_ITEMS)
+            type: generateStartTypeName(GET_RECIPES)
         })
 
-        return getMenuItemsService().then(({ data }) => {
+        return getRecipeItemsService().then(({ data }) => {
             dispatch({
-                type: generateEndTypeName(GET_MENU_ITEMS)
+                type: generateEndTypeName(GET_RECIPES)
             })
 
             if (data.success) {
                 dispatch({
-                    type: generateSuccessTypeName(GET_MENU_ITEMS),
+                    type: generateSuccessTypeName(GET_RECIPES),
                     payload: data.data
                 })
             } else {
                 dispatch({
-                    type: generateErrorTypeName(GET_MENU_ITEMS),
+                    type: generateErrorTypeName(GET_RECIPES),
                     payload: data.error
                 })
             }

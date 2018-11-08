@@ -1,13 +1,18 @@
 import { applyMiddleware, createStore, compose } from "redux"
 import thunk from "redux-thunk"
-import asyncActionsMiddleware from "./middleware/asyncActionsMiddleware"
 import rootReducer from "./reducers"
 
 const enhancers = []
-const middlewares = [thunk, asyncActionsMiddleware]
+const middleware = [thunk]
+const composeEnhancers =
+    typeof window === "object" && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+        ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+              // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
+          })
+        : compose
 
-const composedEnhancers = compose(
-    applyMiddleware(...middlewares),
+const composedEnhancers = composeEnhancers(
+    applyMiddleware(...middleware),
     ...enhancers
 )
 

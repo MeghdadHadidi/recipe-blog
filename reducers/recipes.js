@@ -1,38 +1,38 @@
-import { GET_MENU_ITEMS } from "../actions/types"
-
 import {
-    generateSuccessTypeName,
-    generateErrorTypeName,
     generateEndTypeName,
-    generateStartTypeName
+    generateErrorTypeName,
+    generateStartTypeName,
+    generateSuccessTypeName
 } from "../utils/asyncActionNameGenerator"
 
+import { GET_RECIPES } from "../actions/types"
+
 const initialState = {
-    fetching: false,
-    fetched: false,
     items: [],
+    fetched: false,
+    fetching: false,
     error: null
 }
 
-export default function menus(state = initialState, action = {}) {
+export default function recipe(state = initialState, action = {}) {
     switch (action.type) {
-        case generateStartTypeName(GET_MENU_ITEMS):
+        case generateStartTypeName(GET_RECIPES):
             return {
                 ...state,
+                fetched: false,
                 fetching: true
             }
-        case generateEndTypeName(GET_MENU_ITEMS):
+        case generateEndTypeName(GET_RECIPES):
             return {
                 ...state,
                 fetching: false
             }
-        case generateErrorTypeName(GET_MENU_ITEMS):
+        case generateErrorTypeName(GET_RECIPES):
             return {
                 ...state,
-                fetched: false,
                 error: action.payload
             }
-        case generateSuccessTypeName(GET_MENU_ITEMS):
+        case generateSuccessTypeName(GET_RECIPES):
             return {
                 ...state,
                 fetched: true,

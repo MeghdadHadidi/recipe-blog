@@ -1,4 +1,7 @@
-import { combineReducers } from 'redux'
-import menus from './menus'
+import { combineReducers } from "redux"
 
-export default combineReducers({ menus })
+// Reducers
+import menus from "./menus"
+import recipes from "./recipes"
+
+export default combineReducers({ menus, recipes })

@@ -1,5 +1,2 @@
-// Menu Items
-export const GET_MENU_ITEMS_START = 'GET_MENU_ITEMS_START'
-export const GET_MENU_ITEMS_END = 'GET_MENU_ITEMS_END'
-export const GET_MENU_ITEMS_ERROR = 'GET_MENU_ITEMS_ERROR'
-export const SET_MENU_ITEMS = 'SET_MENU_ITEMS'
+export const GET_MENU_ITEMS = "GET_MENU_ITEMS"
+export const GET_RECIPES = "GET_RECIPES"
