@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const instance = axios.create({
-	baseURL: "bejooi.ir/api/v1",
+	baseURL: "https://bejooi.ir/api/v1",
 	headers: {
 		"Content-Type": "application/json;charset=UTF-8"
 	}
