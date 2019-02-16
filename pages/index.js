@@ -10,10 +10,7 @@ export default () => (
     <Container>
         <Head>
             <title>My page title</title>
-            <meta
-                name="viewport"
-                content="initial-scale=1.0, width=device-width"
-            />
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         </Head>
         <Layout />
     </Container>

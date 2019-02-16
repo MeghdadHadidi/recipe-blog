@@ -15,7 +15,7 @@ export const getRecipeItems = params => {
             type: generateStartTypeName(GET_RECIPES)
         })
 
-        return getRecipeItemsService().then(({ data }) => {
+        return getRecipeItemsService(params).then(({ data }) => {
             dispatch({
                 type: generateEndTypeName(GET_RECIPES)
             })

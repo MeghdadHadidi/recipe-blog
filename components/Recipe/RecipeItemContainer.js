@@ -4,11 +4,11 @@ import PropTypes from "prop-types"
 import RecipeItem from "./RecipeItem"
 
 const RecipeItemContainer = props => {
-    const { recipe, render } = props
+    const { recipe, render, index } = props
 
     return (
         <>
-            {render && render(recipe)}
+            {render && render(recipe, index)}
             {!render && <RecipeItem recipe={recipe} />}
         </>
     )

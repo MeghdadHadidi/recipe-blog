@@ -19,10 +19,11 @@ class RecipeList extends Component {
         const { items, render } = this.props
         return (
             <>
-                {items.map(recipe => (
+                {items.map((recipe, index) => (
                     <RecipeItemContainer
                         key={recipe.id}
                         recipe={recipe}
+                        index={index}
                         render={render}
                     />
                 ))}
