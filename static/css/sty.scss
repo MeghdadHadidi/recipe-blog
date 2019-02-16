@@ -231,23 +231,26 @@ a {
 			}
 
 			.posttype {
-				position: absolute;
-				left: 0px;
-				bottom: 0px;
-				width: 48px;
-				height: 48px;
-				z-index: 9;
-				background-color: rgba(0, 0, 0, 0.6);
+				&.gallery,
+				&.recipe {
+					position: absolute;
+					left: 0px;
+					bottom: 0px;
+					width: 48px;
+					height: 48px;
+					z-index: 9;
+					background-color: rgba(0, 0, 0, 0.6);
 
-				background-repeat: no-repeat;
-				background-position: center;
+					background-repeat: no-repeat;
+					background-position: center;
+				}
 
 				&.gallery {
 					background-image: url("../image/cat-gallery.svg");
 				}
 
 				&.recipe {
-					background-image: url("../image/cat-gallery.svg");
+					background-image: url("../image/cat-recipe.svg");
 				}
 			}
 

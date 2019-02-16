@@ -25,7 +25,7 @@ const MainItemsBlock = props => {
 						return (
 							<Col
 								md={md}
-								className={index === 0 && "full-height"}>
+								className={index === 0 ? "full-height" : ""}>
 								<Link href="">
 									<a>
 										<Card>
@@ -35,7 +35,10 @@ const MainItemsBlock = props => {
 													recipe.image
 												}&time=${new Date().getTime()}`}
 												alt="Card image cap">
-												<div className="posttype gallery">
+												<div
+													className={`posttype ${
+														recipe.type
+													}`}>
 													<span />
 												</div>
 											</ImageLoader>
