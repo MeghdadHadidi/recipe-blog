@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const instance = axios.create({
-	baseURL: "http://www.mocky.io/v2",
+	baseURL: "https://www.mocky.io/v2",
 	headers: {
 		"Content-Type": "application/json;charset=UTF-8"
 	}
