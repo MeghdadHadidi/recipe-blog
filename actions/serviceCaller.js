@@ -14,4 +14,4 @@ export const getRecipeItemsService = params =>
 	instance.get("/5c6866a03800000e1db101a5", { params })
 
 export const getVideosService = params =>
-	instance.get("/5be442002f00008f00d9f442", { params })
+	instance.get("/5c69c490370000cc0a07fdb9", { params })

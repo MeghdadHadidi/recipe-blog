@@ -1,0 +1,527 @@
+@import url("../font/css/fontiran.css");
+.m-r-0 {
+  margin-right: 0;
+}
+
+.m-t-20 {
+  margin-top: 20px;
+}
+
+.m-b-24 {
+  margin-bottom: 24px;
+}
+
+.right-dir {
+  direction: rtl;
+  text-align: right;
+}
+
+a {
+  color: #4a4a4a;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.top-ad {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.page-wrapper {
+  position: relative;
+}
+
+.page-wrapper .leftAd-wrapper {
+  position: fixed;
+}
+
+.page-wrapper .navbar {
+  direction: rtl;
+  text-align: right;
+}
+
+.page-wrapper .navbar.navbar-wrapper {
+  border-bottom: 1px solid #d8d8d8;
+  margin: 24px 10px 0px;
+  padding: 12px 0 24px;
+}
+
+.page-wrapper .navbar .navbar-collapse {
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: -45px;
+}
+
+.page-wrapper .navbar .navbar-collapse .navbar-nav {
+  text-align: right;
+  direction: rtl;
+}
+
+.page-wrapper .navbar .navbar-collapse .navbar-nav li a {
+  font-family: IRANSans !important;
+  font-size: 14px;
+  color: #4a4a4a;
+}
+
+.page-wrapper .navbar .navbar-collapse .header-nav > li:after {
+  background-color: transparent;
+  content: "";
+  display: block;
+  height: 12px;
+  margin-top: 6px;
+  width: inherit;
+  z-index: 2;
+  position: relative;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.page-wrapper .navbar .navbar-collapse .header-nav > li.active::after {
+  background-color: #d8d8d8;
+}
+
+.page-wrapper .navbar .navbar-collapse .header-nav > li:hover::after {
+  background-color: #76adf7;
+}
+
+.page-wrapper .navbar .navbar-collapse .header-nav > li:hover .sub-menu {
+  display: block;
+}
+
+.page-wrapper .navbar .navbar-collapse .social-nav li {
+  width: 30px;
+  height: 24px;
+  display: inline-block;
+  margin-right: 12px;
+}
+
+.page-wrapper .navbar .navbar-collapse .social-nav li a {
+  background-repeat: no-repeat !important;
+  display: block;
+  height: 100%;
+}
+
+.page-wrapper .navbar .navbar-collapse .social-nav li a.instagram {
+  background: url(../image/instagram.svg);
+}
+
+.page-wrapper .navbar .navbar-collapse .social-nav li a.instagram:hover {
+  background: url(../image/instagram-hover.svg);
+}
+
+.page-wrapper .navbar .navbar-collapse .social-nav li a.twitter {
+  background: url(../image/twitter.svg);
+}
+
+.page-wrapper .navbar .navbar-collapse .social-nav li a.twitter:hover {
+  background: url(../image/twitter-hover.svg);
+}
+
+.sub-menu {
+  background-color: #fff;
+  border: 3px double #76adf7;
+  box-shadow: 0 0 4px #76adf7;
+  display: none;
+  padding: 32px 44px;
+  width: 940px;
+  z-index: 1;
+  margin-top: -9px;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 4px);
+}
+
+.sub-menu li {
+  font-size: 15px;
+  font-size: 13px;
+  float: right;
+  margin-bottom: 54px;
+  width: 210px;
+  list-style: none;
+}
+
+.sub-menu li.expanded a {
+  font-family: IRANSans !important;
+  font-size: 14px;
+  color: #4a4a4a;
+  display: block;
+  font-weight: bold;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.sub-menu li.expanded a:hover {
+  color: #76adf7;
+  cursor: pointer;
+}
+
+.sub-menu li.expanded ul.main-menu--sub-list {
+  float: left;
+  padding: 0;
+  margin-top: 4px;
+}
+
+.sub-menu li.expanded ul.main-menu--sub-list li.leaf {
+  margin-bottom: 0;
+}
+
+.sub-menu li.expanded ul.main-menu--sub-list li.leaf a {
+  font-family: IRANSans !important;
+  font-size: 14px;
+  color: #4a4a4a;
+  font-weight: normal;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.sub-menu li.expanded ul.main-menu--sub-list li.leaf a:hover {
+  color: #76adf7;
+  cursor: pointer;
+}
+
+.main-block {
+  border-bottom: 3px double #d8d8d8;
+  margin-bottom: 35px;
+}
+
+.main-block .full-height a .card .image-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 413px;
+}
+
+.main-block .headline-article {
+  font-family: IRANSans !important;
+  color: #4a4a4a;
+  text-align: right;
+  margin-bottom: 38px;
+  font-size: 30px;
+  line-height: 42px;
+  font-weight: 400;
+}
+
+.main-block a {
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.main-block a .card {
+  border: none;
+  overflow: hidden;
+  position: relative;
+}
+
+.main-block a .card img {
+  transition: all ease 0.2s;
+}
+
+.main-block a .card .image-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+}
+
+.main-block a .card .posttype.gallery, .main-block a .card .posttype.recipe {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 48px;
+  height: 48px;
+  z-index: 9;
+  background-color: rgba(0, 0, 0, 0.6);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.main-block a .card .posttype.gallery {
+  background-image: url("../image/cat-gallery.svg");
+}
+
+.main-block a .card .posttype.recipe {
+  background-image: url("../image/cat-recipe.svg");
+}
+
+.main-block a .card .posttype.video {
+  background-image: url("../image/cat-video.svg");
+  left: calc(50% / 2 - 24px);
+}
+
+.main-block a .card .card-body {
+  text-align: right;
+  padding-right: 0;
+  padding-bottom: 35px;
+}
+
+.main-block a .card .card-body h5 {
+  font-family: IRANSans !important;
+  color: #4a4a4a;
+  font-style: normal;
+  font-weight: 300;
+  margin-bottom: 36px;
+}
+
+.main-block a:hover {
+  text-decoration: none;
+  color: #76adf7;
+}
+
+.main-block a:hover .card img {
+  opacity: 0.8;
+  transition: all ease 0.2s;
+}
+
+.main-block a:hover .card .card-body a {
+  text-decoration: none;
+  color: #76adf7;
+}
+
+.main-block.horizontalList {
+  direction: rtl;
+}
+
+.main-block.horizontalList .card .image-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 140px;
+  width: 140px;
+}
+
+.main-block.horizontalList .card .image-wrapper img {
+  width: auto;
+  height: 100%;
+  max-width: none;
+}
+
+.main-block.horizontalList .card .image-wrapper::after {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.main-block.horizontalList .card .card-body h5 {
+  font-family: IRANSans !important;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.sidebar.block:after {
+  content: "";
+  display: block;
+  border-bottom: 3px double #d8d8d8;
+  margin: 0 auto 24px;
+  width: 220px;
+}
+
+.sidebar .sidebar-headline {
+  font-family: IRANSans !important;
+  color: #4a4a4a;
+  font-size: 19px;
+  font-weight: 400;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.sidebar .sidebar-linklist {
+  border: 1px solid #d8d8d8;
+  margin-bottom: 18px;
+  padding: 24px 30px;
+}
+
+.sidebar .sidebar-linklist ul {
+  text-align: right;
+  direction: rtl;
+  padding-right: 19px;
+}
+
+.sidebar .sidebar-linklist ul li a {
+  font-size: 15px;
+  line-height: 18px;
+  line-height: 1.125rem;
+  display: block;
+  margin: 0 0 6px 15px;
+  color: #4a4a4a;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.sidebar .sidebar-linklist ul li a:hover {
+  text-decoration: none;
+  color: #76adf7;
+}
+
+.popular-list ul {
+  text-align: right;
+  list-style: none;
+}
+
+.popular-list ul li a.contenttype-recipes {
+  margin: 18px 20px;
+  display: block;
+  height: 95px;
+}
+
+.popular-list ul li a.contenttype-recipes:before {
+  background-color: #d8d8d8;
+  content: "";
+  display: block;
+  height: 1px;
+  margin: 16px 20px;
+  visibility: visible;
+}
+
+.popular-list ul li a.contenttype-recipes .recipe-image {
+  position: relative;
+  float: left;
+  margin-right: 18px;
+  overflow: hidden;
+  width: 80px;
+  height: 80px;
+}
+
+.popular-list ul li a.contenttype-recipes .recipe-image img {
+  width: auto;
+  height: 100%;
+}
+
+.popular-list ul li a.contenttype-recipes .recipe-headline a {
+  color: #4a4a4a;
+}
+
+.popular-list ul li a.contenttype-recipes:after {
+  content: "";
+  clear: both;
+  float: none;
+  height: 1px;
+}
+
+.lds-dual-ring {
+  line-height: 11;
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: #ccc;
+}
+
+.lds-dual-ring:after {
+  content: " ";
+  display: inline-block;
+  width: 46px;
+  height: 46px;
+  margin: 1px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.main-block .card {
+  border-radius: 0px;
+}
+
+.video-modal {
+  display: none;
+  width: 480px;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+.video-modal.modal-visible {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: block;
+  z-index: 9;
+}
+
+.video-modal.modal-visible > div {
+  width: 480px;
+  height: 320px;
+  position: absolute;
+  left: calc(50% - 240px);
+  top: 15%;
+  padding: 5px;
+  box-shadow: 0px 0px 100px 950px rgba(0, 0, 0, 0.4);
+  transition: all ease 0.3s;
+}
+
+.video-modal.modal-visible > div iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.video-modal.modal-visible .close-modal {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+.video-modal.modal-visible .close-modal:after {
+  content: "x";
+}
+
+.video-list-container .video-item.card {
+  border: none;
+  overflow: hidden;
+  position: relative;
+}
+
+.video-list-container .video-item.card .image-wrapper {
+  height: 140px;
+  width: 140px;
+  overflow: hidden;
+}
+
+.video-list-container .video-item.card .image-wrapper img {
+  height: 100%;
+  max-width: none;
+  width: auto;
+}
+
+.video-list-container .video-item h5 {
+  font-family: IRANSans !important;
+  font-size: 15px;
+  font-weight: 500;
+}
