@@ -504,6 +504,15 @@ a {
 }
 
 .video-list-container {
+	display: flex;
+	flex-wrap: nowrap;
+	transition: all ease 0.3s;
+
+	.video-item-wrapper {
+		flex: 1;
+		max-width: 170px;
+	}
+
 	.video-item {
 		&.card {
 			border: none;
@@ -527,6 +536,57 @@ a {
 			font-family: IRANSans !important;
 			font-size: 15px;
 			font-weight: 500;
+		}
+	}
+}
+
+.video-slider-wrapper {
+	overflow: hidden;
+	position: relative;
+
+	.video-slider {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+	}
+
+	.navigation {
+		background: #fff;
+		margin-bottom: 15px;
+
+		.next,
+		.prev {
+			cursor: pointer;
+			width: 40px;
+			height: 40px;
+			display: inline-block;
+			text-align: center;
+			border: 1px solid #333;
+			justify-content: center;
+			align-items: center;
+			line-height: 45px;
+			margin-right: 10px;
+
+			&:after {
+				font-size: 40px;
+				line-height: 0;
+			}
+		}
+
+		.next {
+			right: 0px;
+
+			&:after {
+				content: "›";
+			}
+		}
+
+		.prev {
+			left: 0px;
+
+			&:after {
+				content: "‹";
+			}
 		}
 	}
 }

@@ -3,7 +3,8 @@ import ImageLoader from "../ImageLoader"
 
 class VideoItem extends React.Component {
 	state = {
-		modalVisible: false
+		modalVisible: false,
+		imageHash: new Date().getTime()
 	}
 
 	toggleModalVisible = () => {
@@ -14,15 +15,15 @@ class VideoItem extends React.Component {
 
 	render() {
 		const { video } = this.props
-		const { modalVisible } = this.state
+		const { modalVisible, imageHash } = this.state
 		return (
-			<Col md="3">
+			<Col md="3" className="video-item-wrapper">
 				<Card
 					className="video-item"
 					id={`video_${video.id}`}
 					onClick={this.toggleModalVisible}>
 					<ImageLoader
-						src={`${video.image}&time=${new Date().getTime()}`}
+						src={`${video.image}&time=${imageHash}`}
 						alt="Card image cap">
 						<div className={`posttype ${video.type}`}>
 							<span />

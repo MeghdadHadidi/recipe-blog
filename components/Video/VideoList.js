@@ -15,9 +15,9 @@ class VideoList extends Component {
 	}
 
 	render() {
-		const { items, render } = this.props
+		const { items, render, ...rest } = this.props
 		return (
-			<Row className="video-list-container">
+			<Row style={rest.style} className="video-list-container">
 				{items.length > 0 &&
 					items.map(video => (
 						<VideoItemContainer
