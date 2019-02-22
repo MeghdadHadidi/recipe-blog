@@ -23,7 +23,7 @@ class VideoItem extends React.Component {
 					id={`video_${video.id}`}
 					onClick={this.toggleModalVisible}>
 					<ImageLoader
-						src={`${video.image}&time=${imageHash}`}
+						src={`${video.image}?time=${imageHash}`}
 						alt="Card image cap">
 						<div className={`posttype ${video.type}`}>
 							<span />

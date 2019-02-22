@@ -36,7 +36,7 @@ const MainItemsBlock = props => {
 											<ImageLoader
 												src={`${
 													recipe.image
-												}&time=${new Date().getTime()}`}
+												}?time=${new Date().getTime()}`}
 												alt="Card image cap">
 												<div
 													className={`posttype ${
