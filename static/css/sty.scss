@@ -120,6 +120,12 @@ a {
 								background: url(../image/twitter-hover.svg);
 							}
 						}
+						&.aparat {
+							background: url(../image/aparat.svg);
+							&:hover {
+								background: url(../image/aparat-hover.svg);
+							}
+						}
 					}
 				}
 			}

@@ -9,38 +9,43 @@ class VideoSlider extends Component {
 	}
 
 	componentDidMount() {
-		const videoListWidth = this.refs.listContainer.outerWidth
-		const videoItemWidth = this.refs.querySelector(
+		const videoListWidth = this.refs.videoSlider.querySelector(
+			".video-list-container"
+		).clientWidth
+		const videoItemElement = this.refs.videoSlider.querySelector(
 			".video-list-container .video-item-wrapper"
-		)[0].outerWidth
-		this.setState({
-			videoListWidth,
-			videoItemWidth
-		})
+		)
+
+		if (videoItemElement) {
+			this.setState({
+				videoListWidth,
+				videoItemElement: videoItemElement.clientWidth
+			})
+		}
 	}
 
 	handleSliderNext = () => {
 		this.setState({
-			sliderMargin: this.sliderMargin - animateRatio
+			sliderMargin: this.state.sliderMargin - animateRatio
 		})
 	}
 
 	handleSliderPrev = () => {
 		this.setState({
-			sliderMargin: this.sliderMargin + animateRatio
+			sliderMargin: this.state.sliderMargin + animateRatio
 		})
 	}
 
 	render() {
+		const { sliderMargin } = this.state
 		return (
 			<div className="video-slider-wrapper">
 				<div className="navigation">
 					<span onClick={this.handleSliderPrev} className="prev" />
 					<span onClick={this.handleSliderNext} className="next" />
 				</div>
-				<div className="video-slider">
+				<div ref="videoSlider" className="video-slider">
 					<VideoList
-						ref="videoSlider"
 						style={{ marginLeft: `${sliderMargin}px` }}
 						cat="3"
 						count={4}

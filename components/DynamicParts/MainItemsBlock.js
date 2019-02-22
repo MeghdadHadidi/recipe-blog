@@ -26,7 +26,10 @@ const MainItemsBlock = props => {
 							<Col
 								md={md}
 								className={index === 0 ? "full-height" : ""}>
-								<Link href="">
+								<Link
+									href={`/post?title=${recipe.title}&type=${
+										recipe.type
+									}`}>
 									<a>
 										<Card>
 											{/* <CardImg top width="100%" src={`${recipe.image}&time=${new Date().getTime()}`} alt="Card image cap" /> */}

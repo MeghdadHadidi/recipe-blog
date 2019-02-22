@@ -1,17 +1,30 @@
-import Head from "next/head"
 import "bootstrap/dist/css/bootstrap.min.css"
-import { Container } from "reactstrap"
+import { Container, Col } from "reactstrap"
+
+import SidebarAd from "../components/StaticParts/SideAd"
 import Layout from "../components/layout"
+import PopularRecipeList from "../components/DynamicParts/PopularRecipeList"
+import LinkList from "../components/DynamicParts/LinkList"
+import HorizontalItemsBlock from "../components/DynamicParts/HorizontalItemsBlock"
+import VideoList from "../components/DynamicParts/VideoSlider"
+import MainItemsBlock from "../components/DynamicParts/MainItemsBlock"
 
 import "../static/css/style.css"
 import "../static/css/sty.scss"
 
 export default () => (
-    <Container>
-        <Head>
-            <title>My page title</title>
-            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-        </Head>
-        <Layout />
-    </Container>
+	<Container>
+		<Layout>
+			<Col md="4" className="d-none d-sm-block ">
+				<LinkList />
+				<PopularRecipeList />
+				<SidebarAd />
+			</Col>
+			<Col md="8" xs="12">
+				<MainItemsBlock />
+				<HorizontalItemsBlock />
+				<VideoList />
+			</Col>
+		</Layout>
+	</Container>
 )
