@@ -58,3 +58,32 @@ export const getRecipeDetail = params => {
 		})
 	}
 }
+
+export const getRecipesByCategory = category => {
+	return dispatch => {
+		dispatch({
+			type: generateStartTypeName(GET_RECIPES_BY_CATEGORY)
+		})
+
+		return getRecipeDetailService(category).then(({ data }) => {
+			dispatch({ type: generateEndTypeName(GET_RECIPES_BY_CATEGORY) })
+
+			if (data.success) {
+				dispatch({
+					type: generateSuccessTypeName(GET_RECIPES),
+					payload: data.data
+				})
+
+				return dispatch({
+					type: "GET_RECIPES_BY_CATEGORY",
+					payload: category
+				})
+			} else {
+				dispatch({
+					type: generateErrorTypeName(GET_RECIPES_BY_CATEGORY),
+					payload: data.error
+				})
+			}
+		})
+	}
+}
