@@ -1,35 +1,33 @@
+const types = {
+	GET_RECIPES: "recipes.fetchStart",
+	GET_RECIPES_END: "recipes.fetchEnd",
+	GET_RECIPES_SUCCESS: "recipes.fetchSuccess",
+	GET_RECIPES_ERROR: "recipes.fetchError",
+	GET_RECIPE_DETAIL: "recipe.detail.fetchStart",
+	GET_RECIPE_DETAIL_END: "recipe.detail.fetchEnd",
+	GET_RECIPE_DETAIL_SUCCESS: "recipe.detail.fetchSuccess",
+	GET_RECIPE_DETAIL_ERROR: "recipe.detail.fetchError"
+}
+
 import {
-	generateEndTypeName,
-	generateStartTypeName,
-	generateErrorTypeName,
-	generateSuccessTypeName
-} from "../utils/asyncActionNameGenerator"
-
-import { GET_RECIPES, GET_RECIPE_DETAIL } from "./types"
-
-import { getRecipeItemsService, getRecipeDetailService } from "./serviceCaller"
+	getRecipeItemsService,
+	getRecipeDetailService
+} from "../utils/serviceCaller"
 
 export const getRecipeItems = params => {
 	return dispatch => {
-		dispatch({
-			type: generateStartTypeName(GET_RECIPES)
-		})
+		dispatch({ type: types.GET_RECIPES })
 
 		return getRecipeItemsService(params).then(({ data }) => {
-			dispatch({
-				type: generateEndTypeName(GET_RECIPES)
-			})
+			dispatch({ type: types.GET_RECIPES_END })
 
 			if (data.success) {
 				dispatch({
-					type: generateSuccessTypeName(GET_RECIPES),
+					type: types.GET_RECIPES_SUCCESS,
 					payload: data.data
 				})
 			} else {
-				dispatch({
-					type: generateErrorTypeName(GET_RECIPES),
-					payload: data.error
-				})
+				dispatch({ type: types.GET_RECIPES_ERROR, payload: data.error })
 			}
 		})
 	}
@@ -37,21 +35,19 @@ export const getRecipeItems = params => {
 
 export const getRecipeDetail = params => {
 	return dispatch => {
-		dispatch({
-			type: generateStartTypeName(GET_RECIPE_DETAIL)
-		})
+		dispatch({ type: types.GET_RECIPE_DETAIL })
 
 		return getRecipeDetailService(params).then(({ data }) => {
-			dispatch({ type: generateEndTypeName(GET_RECIPE_DETAIL) })
+			dispatch({ type: types.GET_RECIPE_DETAIL_END })
 
 			if (data.success) {
 				return dispatch({
-					type: generateSuccessTypeName(GET_RECIPE_DETAIL),
+					type: types.GET_RECIPE_DETAIL_SUCCESS,
 					payload: data.data
 				})
 			} else {
 				dispatch({
-					type: generateErrorTypeName(GET_RECIPE_DETAIL),
+					type: types.GET_RECIPE_DETAIL_ERROR,
 					payload: data.error
 				})
 			}
